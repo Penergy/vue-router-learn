@@ -1,0 +1,20 @@
+{
+  "name": "vue-route-learn",
+  "version": "1.0.0",
+  "description": "learn vue-router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "author": "Eason peng",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "webpack": "^3.10.0"
+  }
+}
