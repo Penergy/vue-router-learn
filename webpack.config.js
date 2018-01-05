@@ -18,10 +18,17 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
+            //解析VUE文件，vue最主要的就是用到了这个vue-loader，这才是解析vue文件的关键 
+            //但是因为vue文件里面又包含有css和js，所以才用到了后面的几个loader 
+            { test: /\.vue$/, loader: "vue-loader" },
+            //解析css
+            { test: /\.css$/, loader: "style!css" },
+            //解析html
+            { test: /\.(html|tpl)$/, loader: 'html-loader' }
         ]
     },
-    resolve:{
-        alias:{
+    resolve: {
+        alias: {
             'vue$': 'vue/dist/vue.js'
         }
     }
