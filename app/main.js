@@ -4,6 +4,17 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter)
 
+// 0. 动态路由匹配
+const User = {
+    template: '<div>User {{ $route.params.username }} </div>'
+}
+const User_post = {
+    template: '<div>User {{ $route.params.username }} and Post {{$route.params.post_id}}</div>'
+}
+const fullpath = {
+    template: '<div>{{ $route.fullPath }}</div>'
+}
+
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 const Foo = { template: '<div>foo</div>' }
@@ -16,7 +27,10 @@ const Bar = { template: '<div>bar</div>' }
 // 我们晚点再讨论嵌套路由。
 const routes = [
     { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
+    { path: '/bar', component: Bar },
+    { path: '/user/:username', component: User},
+    { path: '/user/:username/post/:post_id', component: User_post},
+    { path: '/user/:username/post/:post_id/test', component: fullpath}
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置
@@ -30,6 +44,6 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const app = new Vue({
     router
-}).$mount('div#app')
+}).$mount('#app')
 
 // 现在，应用已经启动了！
